@@ -1,14 +1,18 @@
 package com.holelin.sort;
 
-import com.holelin.util.TestConfig;
 import com.holelin.util.NumberUtils;
+import com.holelin.util.TestConfig;
 
 /**
- * 冒泡排序测试类
- *
+ * ClassName: SelectionSort
+ * 选择排序测试类
  * @author HoleLin
+ * @version 1.0
+ * @date 2019/1/14
  */
-public class BubbleSortTest {
+
+public class SelectionSort {
+
     public static void main(String[] args) {
         boolean succeed = true;
         for (int i = 0; i < TestConfig.testTime; i++) {
@@ -17,7 +21,7 @@ public class BubbleSortTest {
             // 拷贝数组数组
             int[] copyArr = NumberUtils.copyArray(arr);
             // 进行排序
-            Sorts.bubbleSort(arr);
+            Sorts.selectionSort(arr);
             // 对数器
             NumberUtils.comparator(copyArr);
             // 验证两个经过排序后的数组是否完全一样
@@ -30,6 +34,7 @@ public class BubbleSortTest {
             }
         }
         System.out.println(succeed?"Nice~~~":"Fucking fucked!");
+
 
     }
 }
