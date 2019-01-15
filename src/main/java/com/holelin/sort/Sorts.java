@@ -73,9 +73,14 @@ class Sorts {
             // 当满足arr[j] > arr[j + 1] 说明顺序不对，则进行交换 j向前移动一位 继续判断是否满足arr[j] > arr[j + 1]
             // 满足就进行交换 直至j<0或者不满足arr[j] > arr[j + 1]
             // 当不满足arr[j] > arr[j + 1] 说明顺序是对的，则直接判断下一个位置
-            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
-                swap(arr, j, j + 1);
-            }
+//            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+//                swap(arr, j, j + 1);
+//            }
+            // 或者写成这样
+//            for (int j = i; j > 0 && arr[j-1] > arr[j]; j--) {
+//                swap(arr, j, j - 1);
+//            }
+
         }
     }
 
