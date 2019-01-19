@@ -90,7 +90,8 @@ public class Array<E> {
     public void add(int index, E element) {
         // 当数组满了则不能添加元素
         if (size == data.length) {
-            throw new IllegalArgumentException("Add failed . Array is full .");
+            resize(2 * data.length);
+//            throw new IllegalArgumentException("Add failed . Array is full .");
         }
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("Add failed . Require index >=0 and index < size.");
@@ -106,6 +107,15 @@ public class Array<E> {
         data[index] = element;
         // 数组元素个数加一
         size++;
+    }
+
+    private void resize(int newCapacity) {
+        // 创建新的大容量数组
+        E[] newData = (E[]) new Object[newCapacity];
+        // 将旧数组中元素全部拷贝到新数组中
+        System.arraycopy(data, 0, newData, 0, size);
+        // 将新数组赋给data
+        data = newData;
     }
 
     /**
@@ -188,6 +198,10 @@ public class Array<E> {
         }
         size--;
         data[size] = null;
+        // 当数组中元素个数等于容量的4分之一时,进行缩容
+        if (size == data.length / 4) {
+            resize(data.length / 2);
+        }
         return element;
     }
 

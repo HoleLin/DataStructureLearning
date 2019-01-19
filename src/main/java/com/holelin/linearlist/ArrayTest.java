@@ -10,7 +10,7 @@ package com.holelin.linearlist;
 
 public class ArrayTest {
     public static void main(String[] args) {
-        Array<Integer> arr = new Array<>(50);
+        Array<Integer> arr = new Array<>(20);
         for (int i = 0; i < 19; i++) {
             arr.addLast(i);
         }
@@ -24,6 +24,38 @@ public class ArrayTest {
         arr.removeElement(5);
         System.out.println(arr);
         arr.removeFirst();
+        System.out.println(arr);
+        arr.add(1, 100);
+        System.out.println(arr);
+        arr.add(1, 100);
+        System.out.println(arr);
+        arr.add(1, 100);
+        System.out.println(arr);
+        arr.add(1, 100);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
+        System.out.println(arr);
+        arr.remove(2);
         System.out.println(arr);
     }
 }
