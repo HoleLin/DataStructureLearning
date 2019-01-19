@@ -60,7 +60,7 @@ class Sorts {
     /**
      * 插入排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void insertionSort(int[] arr) {
         if (checkArray(arr)) {
@@ -73,9 +73,9 @@ class Sorts {
             // 当满足arr[j] > arr[j + 1] 说明顺序不对，则进行交换 j向前移动一位 继续判断是否满足arr[j] > arr[j + 1]
             // 满足就进行交换 直至j<0或者不满足arr[j] > arr[j + 1]
             // 当不满足arr[j] > arr[j + 1] 说明顺序是对的，则直接判断下一个位置
-//            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
-//                swap(arr, j, j + 1);
-//            }
+            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+                swap(arr, j, j + 1);
+            }
             // 或者写成这样
 //            for (int j = i; j > 0 && arr[j-1] > arr[j]; j--) {
 //                swap(arr, j, j - 1);
@@ -85,9 +85,32 @@ class Sorts {
     }
 
     /**
+     * 改进后的插入排序
+     * -- 减少交换次数
+     *
+     * @param arr 待排数组
+     */
+    static void insertionSort2(int[] arr) {
+        if (checkArray(arr)) {
+            return;
+        }
+        for (int i = 1; i < arr.length; i++) {
+            // 寻找元素arr[i]合适的插入位置
+            int e = arr[i];
+            // j保存元素e应该插入的位置
+            int j;
+            for (j = i; j > 0 && arr[j - 1] > e; j--) {
+                // 前一位数向后移动一位
+                arr[j] = arr[j - 1];
+            }
+            arr[j] = e;
+        }
+    }
+
+    /**
      * 随机快速排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void quickSort(int[] arr) {
         if (checkArray(arr)) {
@@ -154,7 +177,7 @@ class Sorts {
     /**
      * 归并排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void mergeSort(int[] arr) {
 
@@ -163,14 +186,14 @@ class Sorts {
     /**
      * TimSort排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void timSort(int[] arr) {
 
     }
 
     /**
-     * @param arr
+     * @param arr 待排数组
      */
     static void heapSort(int[] arr) {
 
@@ -186,7 +209,7 @@ class Sorts {
     /**
      * 希尔排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void shellSort(int[] arr) {
 
@@ -195,7 +218,7 @@ class Sorts {
     /**
      * 桶排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void bucketSort(int[] arr) {
 
@@ -204,7 +227,7 @@ class Sorts {
     /**
      * 基数排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void radixSort(int[] arr) {
 
@@ -213,7 +236,7 @@ class Sorts {
     /**
      * 基数排序
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void countiongSort(int[] arr) {
 
@@ -222,7 +245,7 @@ class Sorts {
     /**
      * Cubesort是一种并行排序算法
      *
-     * @param arr
+     * @param arr 待排数组
      */
     static void cubeSort(int[] arr) {
 

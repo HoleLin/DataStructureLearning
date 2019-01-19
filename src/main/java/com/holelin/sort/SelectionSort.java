@@ -14,6 +14,7 @@ import com.holelin.util.TestConfig;
 public class SelectionSort {
 
     public static void main(String[] args) {
+        long startTime=System.nanoTime();
         boolean succeed = true;
         for (int i = 0; i < TestConfig.testTime; i++) {
             // 获取随机数组
@@ -33,7 +34,8 @@ public class SelectionSort {
                 break;
             }
         }
-        System.out.println(succeed?"Nice~~~":"Fucking fucked!");
+        long endTime=System.nanoTime();
+        System.out.println(succeed?"Nice~~~"+(endTime-startTime):"Fucking fucked!");
 
 
     }

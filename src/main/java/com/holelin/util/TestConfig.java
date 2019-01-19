@@ -12,7 +12,7 @@ public class TestConfig {
     /**
      * 测试次数
      */
-    public static final int testTime=50000;
+    public static final int testTime=500000;
     /**
      * 随机数组的最大长度
      */

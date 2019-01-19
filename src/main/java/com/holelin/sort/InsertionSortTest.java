@@ -13,6 +13,7 @@ import com.holelin.util.TestConfig;
 
 public class InsertionSortTest {
     public static void main(String[] args) {
+        long startTime=System.nanoTime();
         boolean succeed = true;
         for (int i = 0; i < TestConfig.testTime; i++) {
             // 获取随机数组
@@ -20,7 +21,10 @@ public class InsertionSortTest {
             // 拷贝数组数组
             int[] copyArr = NumberUtils.copyArray(arr);
             // 进行排序
-            Sorts.insertionSort(arr);
+            // 1844666693 耗时
+//            Sorts.insertionSort(arr);
+            // 1596466866 耗时
+            Sorts.insertionSort2(arr);
             // 对数器
             NumberUtils.comparator(copyArr);
             // 验证两个经过排序后的数组是否完全一样
@@ -32,7 +36,8 @@ public class InsertionSortTest {
                 break;
             }
         }
-        System.out.println(succeed?"Nice~~~":"Fucking fucked!");
+        long endTime=System.nanoTime();
+        System.out.println(succeed?"Nice~~~"+(endTime-startTime):"Fucking fucked!");
 
 
 
