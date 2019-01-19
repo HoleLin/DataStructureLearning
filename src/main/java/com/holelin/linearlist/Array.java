@@ -65,6 +65,7 @@ public class Array<E> {
 
     /**
      * 在末尾添加元素
+     * 时间复杂度 : O(1)
      *
      * @param element 待添加的元素
      */
@@ -74,6 +75,7 @@ public class Array<E> {
 
     /**
      * 在开头插入元素
+     * 时间复杂度 : O(n)
      *
      * @param element 待添加的元素
      */
@@ -83,6 +85,7 @@ public class Array<E> {
 
     /**
      * 根据用户指定位置插入元素
+     * 时间复杂度 : O(n)
      *
      * @param index   元素插入的位置
      * @param element 带插入的元素
@@ -120,6 +123,7 @@ public class Array<E> {
 
     /**
      * 获取index索引位置的元素
+     * 时间复杂度 : O(1)
      *
      * @param index 元素的位置
      * @return index索引位置的元素
@@ -133,6 +137,7 @@ public class Array<E> {
 
     /**
      * 将index位置上的元素修改为element
+     * 时间复杂度 : O(1)
      *
      * @param index   要修改元素的位置
      * @param element 修改后元素的值
@@ -146,6 +151,7 @@ public class Array<E> {
 
     /**
      * 判断数组中是否包含element元素
+     * 时间复杂度 : O(n)
      *
      * @param element 待判断的元素
      * @return 当数组中包含element返回true
@@ -161,6 +167,7 @@ public class Array<E> {
 
     /**
      * 查询数组中是否包含element
+     * 时间复杂度 : O(n)
      *
      * @param element 待查找的元素
      * @return 包含返回element所在的索引, 不包含则返回-1
@@ -176,6 +183,7 @@ public class Array<E> {
 
     /**
      * 删除index位置上的元素,返回删除的元素
+     * 时间复杂度 : O(n)
      *
      * @param index
      */
@@ -199,7 +207,7 @@ public class Array<E> {
         size--;
         data[size] = null;
         // 当数组中元素个数等于容量的4分之一时,进行缩容
-        if (size == data.length / 4) {
+        if (size == data.length / 4 && data.length / 2 != 0) {
             resize(data.length / 2);
         }
         return element;
@@ -207,6 +215,7 @@ public class Array<E> {
 
     /**
      * 删除数组中第一个元素,并返回元素的值
+     * 时间复杂度 : O(n)
      *
      * @return 返回删除元素的值
      */
@@ -216,6 +225,7 @@ public class Array<E> {
 
     /**
      * 删除数组最后一个元素,并返回元素的值
+     * 时间复杂度 : O(1)
      *
      * @return 返回删除元素的值
      */
