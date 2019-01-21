@@ -136,6 +136,22 @@ public class Array<E> {
     }
 
     /**
+     * 获取数组中第一个元素的值
+     * @return 数组中第一个元素的值
+     */
+    public E getFirst() {
+        return get(0);
+    }
+
+    /**
+     * 获取数组中最后一个元素的值
+     * @return 数组中最后一个元素的值
+     */
+    public E getLast() {
+        return get(size-1);
+    }
+
+    /**
      * 将index位置上的元素修改为element
      * 时间复杂度 : O(1)
      *
