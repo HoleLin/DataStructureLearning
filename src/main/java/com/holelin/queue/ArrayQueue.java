@@ -1,52 +1,39 @@
-package com.holelin.stack;
+package com.holelin.queue;
 
 import com.holelin.linearlist.Array;
 
 /**
- * ClassName: ArrayStack
+ * ClassName: ArrayQueue
  *
  * @author HoleLin
  * @version 1.0
  * @date 2019/1/21
  */
 
-public class ArrayStack<E> implements Stack<E> {
+public class ArrayQueue<E> implements Queue<E> {
     private Array<E> mArray;
 
-    /**
-     * 创建指定栈的容量
-     *
-     * @param capacity
-     */
-    public ArrayStack(int capacity) {
+    public ArrayQueue(int capacity) {
         mArray = new Array<>(capacity);
     }
 
-    /**
-     * 创建使用默认容量的栈
-     */
-    public ArrayStack() {
+    public ArrayQueue() {
         mArray = new Array<>();
     }
 
-    public int getCapacity() {
-        return mArray.getCapacity();
-    }
-
     @Override
-    public void push(E e) {
-        // 放入数组的末尾
+    public void enqueue(E e) {
         mArray.addLast(e);
     }
 
     @Override
-    public E pop() {
-        return mArray.removeLast();
+    public E dequeue() {
+        return mArray.removeFirst();
     }
 
     @Override
-    public E peek() {
-        return mArray.getLast();
+    public E getFront() {
+        return mArray.getFirst();
     }
 
     @Override
@@ -62,16 +49,15 @@ public class ArrayStack<E> implements Stack<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Stack: size = %d, capacity = %d\n", mArray.getSize(),mArray.getCapacity()));
-
-        res.append('[');
+        res.append(String.format("Queue: size = %d, capacity = %d\n", mArray.getSize(), mArray.getCapacity()));
+        res.append("front [");
         for (int i = 0; i < mArray.getSize(); i++) {
             res.append(mArray.get(i));
             if (i != mArray.getSize() - 1) {
                 res.append(",");
             }
         }
-        res.append("] top");
+        res.append("] tail ");
         return res.toString();
     }
 }

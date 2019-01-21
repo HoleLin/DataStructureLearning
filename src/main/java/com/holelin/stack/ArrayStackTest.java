@@ -11,7 +11,7 @@ package com.holelin.stack;
 public class ArrayStackTest {
     public static void main(String[] args) {
         ArrayStack<Integer> arrayStack = new ArrayStack<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 21; i++) {
             arrayStack.push(i);
             System.out.println(arrayStack);
         }
