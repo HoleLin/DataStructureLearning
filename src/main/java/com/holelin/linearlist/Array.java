@@ -218,8 +218,8 @@ public class Array<E> {
         /*
          Otherwise, if any of the following is true, an IndexOutOfBoundsException is thrown and the destination is not modified:
             The srcPos argument is negative.    srcPos参数为负数。
-            The destPos argument is negative.   destPos参数是否定的。
-            The length argument is negative.   长度参数是否定的。
+            The destPos argument is negative.   destPos参数是负数。
+            The length argument is negative.   长度参数是负数。
             srcPos+length is greater than src.length, the length of the source array.   srcPos + length大于src.length，即源数组的长度。
             destPos+length is greater than dest.length, the length of the destination array.   destPos + length大于dest.length，即目标数组的长度。
          */
@@ -234,10 +234,10 @@ public class Array<E> {
          */
 //        if (size - index + 1 >= 0) {
 //            //public static void (Object src,
-//            //                             int srcPos,
-//            //                             Object dest,
-//            //                             int destPos,
-//            //                             int length)
+//                                  int srcPos,
+//                                  Object dest,
+//                                  int destPos,
+//                                  int length)
 //            //src:源数组；	srcPos:源数组要复制的起始位置；
 //            //dest:目的数组；	destPos:目的数组放置的起始位置；	length:复制的长度。
 //            //注意：src and dest都必须是同类型或者可以进行转换类型的数组．

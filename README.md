@@ -12,3 +12,8 @@
 * 添加动态扩容,动态缩容功能
 * 在Array中添加获取第一个元素和获取最后一个元素的方法
 * 添加栈的实现及栈的测试
+
+2019年1月30日14:43:57
+* 添加循环队列及测试类
+* 添加ArrayQueue与LoopQueue的效率比较测试
+* 效率测试时发现一个Bug: 使用System.arraycopy()方法时出现ArrayIndexOutOfBoundsException
