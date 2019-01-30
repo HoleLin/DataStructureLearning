@@ -22,6 +22,9 @@ public class QueueEfficiencyTest {
         LoopQueue<Integer> loopQueue = new LoopQueue<>();
         double time2 = testQueue(loopQueue, opCount);
         System.out.println("LoopQueue time is " + time2 + " s");
+        LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<>();
+        double time3 = testQueue(linkedListQueue, opCount);
+        System.out.println("LinkedListQueue time is " + time3 + " s");
 
 //        ArrayQueue time is 2.475480353 s
 //        LoopQueue time is 0.008487905 s
