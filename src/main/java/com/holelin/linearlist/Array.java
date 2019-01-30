@@ -137,6 +137,7 @@ public class Array<E> {
 
     /**
      * 获取数组中第一个元素的值
+     *
      * @return 数组中第一个元素的值
      */
     public E getFirst() {
@@ -145,10 +146,11 @@ public class Array<E> {
 
     /**
      * 获取数组中最后一个元素的值
+     *
      * @return 数组中最后一个元素的值
      */
     public E getLast() {
-        return get(size-1);
+        return get(size - 1);
     }
 
     /**
@@ -209,17 +211,38 @@ public class Array<E> {
         }
         E element = data[index];
         // 将index位置后的元素向前移动一位
-        if (size - index + 1 >= 0) {
-            //public static void (Object src,
-            //                             int srcPos,
-            //                             Object dest,
-            //                             int destPos,
-            //                             int length)
-            //src:源数组；	srcPos:源数组要复制的起始位置；
-            //dest:目的数组；	destPos:目的数组放置的起始位置；	length:复制的长度。
-            //注意：src and dest都必须是同类型或者可以进行转换类型的数组．
-            System.arraycopy(data, index + 1, data, index, size - index + 1);
+
+        for (int i = index + 1; i < size; i++) {
+            data[i - 1] = data[i];
         }
+        /*
+         Otherwise, if any of the following is true, an IndexOutOfBoundsException is thrown and the destination is not modified:
+            The srcPos argument is negative.    srcPos参数为负数。
+            The destPos argument is negative.   destPos参数是否定的。
+            The length argument is negative.   长度参数是否定的。
+            srcPos+length is greater than src.length, the length of the source array.   srcPos + length大于src.length，即源数组的长度。
+            destPos+length is greater than dest.length, the length of the destination array.   destPos + length大于dest.length，即目标数组的长度。
+         */
+        /*
+        使用System.arraycopy()方法出现异常
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
+                at com.holelin.linearlist.Array.remove(Array.java:235)
+                at com.holelin.linearlist.Array.removeFirst(Array.java:253)
+                at com.holelin.queue.ArrayQueue.dequeue(ArrayQueue.java:31)
+                at com.holelin.queue.QueueEfficiencyTest.testQueue(QueueEfficiencyTest.java:34)
+                at com.holelin.queue.QueueEfficiencyTest.main(QueueEfficiencyTest.java:20)
+         */
+//        if (size - index + 1 >= 0) {
+//            //public static void (Object src,
+//            //                             int srcPos,
+//            //                             Object dest,
+//            //                             int destPos,
+//            //                             int length)
+//            //src:源数组；	srcPos:源数组要复制的起始位置；
+//            //dest:目的数组；	destPos:目的数组放置的起始位置；	length:复制的长度。
+//            //注意：src and dest都必须是同类型或者可以进行转换类型的数组．
+//            System.arraycopy(data, index + 1, data, index, size - index + 1);
+//        }
         size--;
         data[size] = null;
         // 当数组中元素个数等于容量的4分之一时,进行缩容
