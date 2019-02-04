@@ -184,6 +184,9 @@ public class BST<E extends Comparable<E>> {
 
 	}
 
+	/**
+	 * 层次遍历
+	 */
 	public void levelOrder() {
 		Queue<Node> q = new LinkedList<>();
 		((LinkedList<Node>) q).add(root);
