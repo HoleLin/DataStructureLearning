@@ -25,7 +25,7 @@ public class MaxHeap<E extends Comparable<E>> {
 		for (int i = parent(arr.length-1); i >=0 ; i--) {
 			siftDown(i);
 		}
-		
+
 	}
 
 	public MaxHeap(int capacity) {
@@ -69,7 +69,7 @@ public class MaxHeap<E extends Comparable<E>> {
 
 	/**
 	 * 返回完全二叉树的数组表示中,一个索引表示的元素的左孩子节点的索引
-	 *
+	 * tips: 索引从0开始
 	 * @param index 查找左孩子节点的索引
 	 * @return 所查节点的左孩子节点的索引
 	 */
@@ -79,7 +79,7 @@ public class MaxHeap<E extends Comparable<E>> {
 
 	/**
 	 * 返回完全二叉树的数组表示中,一个索引表示的元素的右孩子节点的索引
-	 *
+	 * tips: 索引从0开始
 	 * @param index 查找右孩子节点的索引
 	 * @return 所查节点的右孩子节点的索引
 	 */
