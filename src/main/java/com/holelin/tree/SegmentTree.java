@@ -114,6 +114,48 @@ public class SegmentTree<E> {
 	}
 
 	/**
+	 * 将index位置的值,更新为e
+	 *
+	 * @param index 索引为index
+	 * @param e     新的值
+	 */
+	public void set(int index, E e) {
+		if (index < 0 || index >= data.length) {
+			throw new IllegalArgumentException("Index is illegal");
+		}
+		data[index] = e;
+		// 跟新tree
+		set(0, 0, data.length - 1, index, e);
+
+	}
+
+	/**
+	 * 在以treeIndex为根的线段树中更新index的值为e
+	 *
+	 * @param treeIndex 当前树的根节点的索引
+	 * @param l         当前节点所表示的区间的左边界
+	 * @param r         当前节点所表示的区间的右边界
+	 * @param index     待更新的位置的索引
+	 * @param e         新的元素的值
+	 */
+	private void set(int treeIndex, int l, int r, int index, E e) {
+		if (l == r) {
+			tree[treeIndex] = e;
+			return;
+		}
+		int mid = l + (r - l) / 2;
+		int leftTreeChild = leftChild(treeIndex);
+		int rightTreeChild = rightChild(treeIndex);
+		if (index >= mid + 1) {
+			set(rightTreeChild, mid + 1, r, index, e);
+		} else {
+			set(leftTreeChild, l, mid, index, e);
+		}
+
+		tree[treeIndex] = merger.merge(tree[leftTreeChild], tree[rightTreeChild]);
+	}
+
+	/**
 	 * 返回完全二叉树的数组表示中,一个索引表示的元素的左孩子节点的索引
 	 * tips: 索引从0开始
 	 *
