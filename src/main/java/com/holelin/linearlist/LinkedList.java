@@ -138,7 +138,7 @@ public class LinkedList<E> {
 
 	public boolean contains(E data) {
 		Node cur = dummyHead.next;
-		while (cur.next != null) {
+		while (cur != null) {
 			if (cur.data.equals(data)) {
 				return true;
 			}

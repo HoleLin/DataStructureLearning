@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class SetTest {
 	public static void main(String[] args) {
-		System.out.println("Txt one ");
+		System.out.println("Pride and prejudice ");
 		ArrayList<String> words1=new ArrayList<>();
-		FileOperation.readFile("txtOne.txt",words1);
+		FileOperation.readFile("src/res/Pride-and-prejudice.txt",words1);
 		System.out.println("Total words: "+words1.size());
 
 		BSTSet<String> set1=new BSTSet<>();
@@ -28,13 +28,13 @@ public class SetTest {
 
 
 
-		System.out.println("Txt one ");
+		System.out.println("Pride and prejudice");
 		ArrayList<String> words2=new ArrayList<>();
-		FileOperation.readFile("txtOne.txt",words2);
+		FileOperation.readFile("src/res/Pride-and-prejudice.txt",words2);
 		System.out.println("Total words: "+words2.size());
 
 		LinkedListSet<String> set2=new LinkedListSet<>();
-		for (String word: words1
+		for (String word: words2
 		) {
 			set2.add(word);
 		}
