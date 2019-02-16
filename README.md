@@ -60,3 +60,6 @@
 2019年2月16日13:13:30
 * 添加SegmentTree更新方法
 * 添加Trie(字典树/前缀树)以及测试类
+* 添加并查集QuickFind实现
+* 添加并查集QuickUnion实现
+* 添加QuickFind与QuickUnion性能测试类

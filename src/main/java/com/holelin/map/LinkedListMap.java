@@ -2,7 +2,7 @@ package com.holelin.map;
 
 /**
  * ClassName: LinkedListMap
- *
+ * 基于链表实现的Map
  * @author HoleLin
  * @version 1.0
  * @date 2019/2/11

@@ -1,5 +1,10 @@
 package com.holelin.map;
 
+/**
+ * Map接口
+ * @param <K> 键
+ * @param <V> 值
+ */
 public interface Map<K, V> {
 	/**
 	 * 添加元素
