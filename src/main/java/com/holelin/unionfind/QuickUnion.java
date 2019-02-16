@@ -2,19 +2,25 @@ package com.holelin.unionfind;
 
 /**
  * ClassName: QuickUnion
- *
+ * 基于size优化
  * @author HoleLin
- * @version 1.0
+ * @version 2.0
  * @date 2019/2/16
  */
 
 public class QuickUnion implements UnionFind {
 	private int[] parent;
+	/**
+	 * sz[i] 表示以i为根的集合中元素个数
+	 */
+	private int[] sz;
 
 	public QuickUnion(int size) {
 		parent = new int[size];
+		sz = new int[size];
 		for (int i = 0; i < size; i++) {
 			parent[i] = i;
+			sz[i] = 1;
 		}
 	}
 
@@ -48,7 +54,19 @@ public class QuickUnion implements UnionFind {
 		if (qRoot == pRoot) {
 			return;
 		}
-		parent[pRoot] = qRoot;
+		// 将元素个数较少的集合指向元素个数多的集合
+		if (sz[pRoot] < sz[qRoot]) {
+			// pRoot的根节点指向qRoot
+			parent[pRoot] = qRoot;
+			// 将以pRoot为根的树中元素个数加到以qRoot为根的树
+			sz[qRoot] += sz[pRoot];
+
+		} else {
+			parent[qRoot] = pRoot;
+			sz[pRoot] += sz[qRoot];
+		}
+
+
 	}
 
 	@Override

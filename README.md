@@ -63,3 +63,4 @@
 * 添加并查集QuickFind实现
 * 添加并查集QuickUnion实现
 * 添加QuickFind与QuickUnion性能测试类
+* 添加对QuickUnion实现基于size的优化
