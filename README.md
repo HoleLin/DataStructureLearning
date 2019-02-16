@@ -63,5 +63,7 @@
 * 添加并查集QuickFind实现
 * 添加并查集QuickUnion实现
 * 添加QuickFind与QuickUnion性能测试类
-* 添加对QuickUnion实现基于size的优化
+* 添加对QuickUnion实现基于size的优化QuickUnionBySize
 * 添加对QuickUnion实现基于rank的优化类QuickUnionByRank
+* 添加对QuickUnion实现基于路径压缩的优化类QuickUnionByPathCompression
+* 添加对QuickUnion实现基于路径压缩的优化类QuickUnionByPathCompression2(递归实现)

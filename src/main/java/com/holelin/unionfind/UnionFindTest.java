@@ -31,14 +31,19 @@ public class UnionFindTest {
 	}
 
 	public static void main(String[] args) {
-		int size = 1000000;
-		int m = 1000000;
-		QuickFind quickFind = new QuickFind(size);
-		System.out.println("QuickFind: "+testUF(quickFind,m)+"s");
-		QuickUnion quickUnion = new QuickUnion(size);
-		System.out.println("QuickUnion: "+testUF(quickUnion,m)+"s");
+		int size = 10000000;
+		int m = 10000000;
+//		QuickFind quickFind = new QuickFind(size);
+//		System.out.println("QuickFind: "+testUF(quickFind,m)+"s");
+		QuickUnionBySize quickUnion = new QuickUnionBySize(size);
+		System.out.println("QuickUnionBySize: "+testUF(quickUnion,m)+"s");
 		QuickUnionByRank quickUnionByRank= new QuickUnionByRank(size);
 		System.out.println("QuickUnionByRank: "+testUF(quickUnionByRank,m)+"s");
+		QuickUnionByPathCompression quickUnionByPathCompression= new QuickUnionByPathCompression(size);
+		System.out.println("QuickUnionByPathCompression: "+testUF(quickUnionByPathCompression,m)+"s");
+
+		QuickUnionByPathCompression2 quickUnionByPathCompression2= new QuickUnionByPathCompression2(size);
+		System.out.println("QuickUnionByPathCompression2: "+testUF(quickUnionByPathCompression2,m)+"s");
 
 
 	}

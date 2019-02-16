@@ -2,20 +2,20 @@ package com.holelin.unionfind;
 
 /**
  * ClassName: QuickUnionByRank
- * 基于rank的优化
+ * 基于路径压缩的优化
  * @author HoleLin
  * @version 1.0
  * @date 2019/2/16
  */
 
-public class QuickUnionByRank implements UnionFind {
+public class QuickUnionByPathCompression implements UnionFind {
 	private int[] parent;
 	/**
 	 * rank[i] 表示以i为根的集合所表示的树的层数
 	 */
 	private int[] rank;
 
-	public QuickUnionByRank(int size) {
+	public QuickUnionByPathCompression(int size) {
 		parent = new int[size];
 		rank = new int[size];
 		for (int i = 0; i < size; i++) {
@@ -37,6 +37,7 @@ public class QuickUnionByRank implements UnionFind {
 		}
 		// p == parent[p] -- p指向自己,此时p为根节点
 		while (p != parent[p]) {
+			parent[p]=parent[parent[p]];
 			p = parent[p];
 		}
 		return p;

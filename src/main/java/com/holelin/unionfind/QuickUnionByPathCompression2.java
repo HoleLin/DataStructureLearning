@@ -1,26 +1,26 @@
 package com.holelin.unionfind;
 
 /**
- * ClassName: QuickUnion
- * 基于size优化
+ * ClassName: QuickUnionByRank
+ * 基于路径压缩的优化(使用递归方式)
  * @author HoleLin
- * @version 2.0
+ * @version 1.0
  * @date 2019/2/16
  */
 
-public class QuickUnion implements UnionFind {
+public class QuickUnionByPathCompression2 implements UnionFind {
 	private int[] parent;
 	/**
-	 * sz[i] 表示以i为根的集合中元素个数
+	 * rank[i] 表示以i为根的集合所表示的树的层数
 	 */
-	private int[] sz;
+	private int[] rank;
 
-	public QuickUnion(int size) {
+	public QuickUnionByPathCompression2(int size) {
 		parent = new int[size];
-		sz = new int[size];
+		rank = new int[size];
 		for (int i = 0; i < size; i++) {
 			parent[i] = i;
-			sz[i] = 1;
+			rank[i] = 1;
 		}
 	}
 
@@ -35,11 +35,10 @@ public class QuickUnion implements UnionFind {
 		if (p < 0 || p >= parent.length) {
 			throw new IllegalArgumentException("p is out of bound");
 		}
-		// p == parent[p] -- p指向自己,此时p为根节点
-		while (p != parent[p]) {
-			p = parent[p];
+		if (p!=parent[p]){
+			parent[p]=find(parent[p]);
 		}
-		return p;
+		return parent[p];
 	}
 
 	@Override
@@ -54,16 +53,14 @@ public class QuickUnion implements UnionFind {
 		if (qRoot == pRoot) {
 			return;
 		}
-		// 将元素个数较少的集合指向元素个数多的集合
-		if (sz[pRoot] < sz[qRoot]) {
-			// pRoot的根节点指向qRoot
+		// 将rank低的集合指向rank高的集合
+		if (rank[pRoot] < rank[qRoot]) {
 			parent[pRoot] = qRoot;
-			// 将以pRoot为根的树中元素个数加到以qRoot为根的树
-			sz[qRoot] += sz[pRoot];
-
+		} else if (rank[pRoot] > rank[qRoot]) {
+			parent[qRoot] = pRoot;
 		} else {
 			parent[qRoot] = pRoot;
-			sz[pRoot] += sz[qRoot];
+			rank[pRoot] += 1;
 		}
 
 
