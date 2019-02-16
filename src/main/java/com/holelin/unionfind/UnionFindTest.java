@@ -31,12 +31,14 @@ public class UnionFindTest {
 	}
 
 	public static void main(String[] args) {
-		int size = 100000;
-		int m = 10000;
+		int size = 1000000;
+		int m = 1000000;
 		QuickFind quickFind = new QuickFind(size);
 		System.out.println("QuickFind: "+testUF(quickFind,m)+"s");
 		QuickUnion quickUnion = new QuickUnion(size);
 		System.out.println("QuickUnion: "+testUF(quickUnion,m)+"s");
+		QuickUnionByRank quickUnionByRank= new QuickUnionByRank(size);
+		System.out.println("QuickUnionByRank: "+testUF(quickUnionByRank,m)+"s");
 
 
 	}
