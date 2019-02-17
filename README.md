@@ -67,3 +67,11 @@
 * 添加对QuickUnion实现基于rank的优化类QuickUnionByRank
 * 添加对QuickUnion实现基于路径压缩的优化类QuickUnionByPathCompression
 * 添加对QuickUnion实现基于路径压缩的优化类QuickUnionByPathCompression2(递归实现)
+
+2019年2月17日11:48:19
+* 添加AVLTree(平衡二叉树)
+* 对AVLTree添加右旋转,左旋转方法
+* 对AVLTree的LL,RR,LR,RL进行处理
+* 对AVLTree添加删除节点方法(对平衡进行处理)
+* 添加Map测试类(对BSTMap,LinkedListMap,AVLMap测试)
+* 添加对AVLSet测试

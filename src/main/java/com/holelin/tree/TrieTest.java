@@ -17,9 +17,11 @@ import java.util.ArrayList;
 
 public class TrieTest {
 	public static void main(String[] args) {
+		String path = "src/res/Pride-and-prejudice.txt";
+
 		System.out.println("Pride-and-prejudice");
 		ArrayList<String> words = new ArrayList<>();
-		if (FileOperation.readFile("src/res/Pride-and-prejudice.txt", words)) {
+		if (FileOperation.readFile(path, words)) {
 			long startTime = System.nanoTime();
 			BSTSet<String> set = new BSTSet<>();
 			for (String word :
