@@ -58,6 +58,7 @@ public class AVLTreeTest {
 					words) {
 				avlTree.contains(word);
 			}
+			System.out.println("Total different words :" + avlTree.getSize());
 			for (String word :
 					words) {
 				avlTree.remove(word);
@@ -67,7 +68,6 @@ public class AVLTreeTest {
 			}
 			endTime = System.nanoTime();
 			time = (endTime - startTime) / 1000000000.0;
-			System.out.println("Total different words :" + avlTree.getSize());
 			System.out.println("AVLMap: " + time + "s");
 
 		}
