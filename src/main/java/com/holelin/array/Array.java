@@ -1,4 +1,4 @@
-package com.holelin.linearlist;
+package com.holelin.array;
 
 /**
  * ClassName: Array
@@ -239,8 +239,8 @@ public class Array<E> {
         /*
         使用System.arraycopy()方法出现异常
         Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
-                at com.holelin.linearlist.Array.remove(Array.java:235)
-                at com.holelin.linearlist.Array.removeFirst(Array.java:253)
+                at com.holelin.array.Array.remove(Array.java:235)
+                at com.holelin.array.Array.removeFirst(Array.java:253)
                 at com.holelin.queue.ArrayQueue.dequeue(ArrayQueue.java:31)
                 at com.holelin.queue.QueueEfficiencyTest.testQueue(QueueEfficiencyTest.java:34)
                 at com.holelin.queue.QueueEfficiencyTest.main(QueueEfficiencyTest.java:20)

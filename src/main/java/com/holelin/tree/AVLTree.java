@@ -1,8 +1,5 @@
 package com.holelin.tree;
 
-import com.holelin.linearlist.Array;
-import jdk.nashorn.internal.ir.IfNode;
-
 import java.util.ArrayList;
 
 /**

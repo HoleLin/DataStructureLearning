@@ -1,7 +1,5 @@
 package com.holelin.queue;
 
-import com.holelin.linearlist.Array;
-
 import java.util.Random;
 
 /**

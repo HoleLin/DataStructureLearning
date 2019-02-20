@@ -3,7 +3,6 @@ package com.holelin.map;
 import com.holelin.util.FileOperation;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * ClassName: MapTest

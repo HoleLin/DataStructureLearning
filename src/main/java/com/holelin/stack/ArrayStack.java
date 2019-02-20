@@ -1,6 +1,6 @@
 package com.holelin.stack;
 
-import com.holelin.linearlist.Array;
+import com.holelin.array.Array;
 
 /**
  * ClassName: ArrayStack

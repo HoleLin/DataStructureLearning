@@ -1,7 +1,5 @@
 package com.holelin.tree;
 
-import com.holelin.linearlist.Array;
-
 import java.util.ArrayList;
 import java.util.Random;
 

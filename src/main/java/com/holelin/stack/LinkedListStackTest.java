@@ -1,7 +1,5 @@
 package com.holelin.stack;
 
-import com.holelin.linearlist.LinkedList;
-
 /**
  * ClassName: LinkedListStackTest
  *

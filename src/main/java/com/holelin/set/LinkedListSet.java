@@ -1,6 +1,6 @@
 package com.holelin.set;
 
-import com.holelin.linearlist.LinkedList;
+import com.holelin.linkedlist.LinkedList;
 
 /**
  * ClassName: LinkedListSet

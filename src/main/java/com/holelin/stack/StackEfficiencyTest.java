@@ -1,10 +1,5 @@
 package com.holelin.stack;
 
-import com.holelin.linearlist.LinkedList;
-import com.holelin.queue.ArrayQueue;
-import com.holelin.queue.LoopQueue;
-import com.holelin.queue.Queue;
-
 import java.util.Random;
 
 /**

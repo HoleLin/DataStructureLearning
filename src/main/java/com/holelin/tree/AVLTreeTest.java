@@ -4,7 +4,6 @@ import com.holelin.map.BSTMap;
 import com.holelin.util.FileOperation;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**

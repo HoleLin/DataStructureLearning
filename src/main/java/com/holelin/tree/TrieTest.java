@@ -1,6 +1,5 @@
 package com.holelin.tree;
 
-import com.holelin.linearlist.Array;
 import com.holelin.set.BSTSet;
 import com.holelin.util.FileOperation;
 

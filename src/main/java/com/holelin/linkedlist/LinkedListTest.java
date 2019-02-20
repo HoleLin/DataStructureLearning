@@ -1,4 +1,4 @@
-package com.holelin.linearlist;
+package com.holelin.linkedlist;
 
 /**
  * ClassName: LinkedListTest

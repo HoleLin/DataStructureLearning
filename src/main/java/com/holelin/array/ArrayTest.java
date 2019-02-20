@@ -1,4 +1,4 @@
-package com.holelin.linearlist;
+package com.holelin.array;
 
 /**
  * ClassName: ArrayTest

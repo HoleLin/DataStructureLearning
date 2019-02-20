@@ -1,6 +1,6 @@
 package com.holelin.queue;
 
-import com.holelin.linearlist.Array;
+import com.holelin.array.Array;
 
 /**
  * ClassName: ArrayQueue

@@ -1,6 +1,6 @@
 package com.holelin.heap;
 
-import com.holelin.linearlist.Array;
+import com.holelin.array.Array;
 
 /**
  * ClassName: MaxHeap

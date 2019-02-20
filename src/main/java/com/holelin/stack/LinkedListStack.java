@@ -1,6 +1,6 @@
 package com.holelin.stack;
 
-import com.holelin.linearlist.LinkedList;
+import com.holelin.linkedlist.LinkedList;
 
 /**
  * ClassName: LinkedListStack
