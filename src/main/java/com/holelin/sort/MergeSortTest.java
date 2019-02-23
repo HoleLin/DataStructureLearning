@@ -1,17 +1,18 @@
 package com.holelin.sort;
 
-import com.holelin.array.Array;
-import com.holelin.util.TestConfig;
 import com.holelin.util.NumberUtils;
-
-import java.util.Arrays;
+import com.holelin.util.TestConfig;
 
 /**
- * 冒泡排序测试类
+ * ClassName: QuickSortTest
+ * 归并排序测试类
  *
  * @author HoleLin
+ * @version 1.0
+ * @date 2019/1/14
  */
-public class BubbleSortTest {
+
+public class MergeSortTest {
 	public static void main(String[] args) {
 		long startTime = System.nanoTime();
 		boolean succeed = true;
@@ -21,7 +22,7 @@ public class BubbleSortTest {
 			// 拷贝数组数组
 			int[] copyArr = NumberUtils.copyArray(arr);
 			// 进行排序
-            Sorts.bubbleSort(arr);
+			Sorts.mergeSort(arr);
 			// 对数器
 			NumberUtils.comparator(copyArr);
 			// 验证两个经过排序后的数组是否完全一样
@@ -35,6 +36,7 @@ public class BubbleSortTest {
 		}
 		long endTime = System.nanoTime();
 		System.out.println(succeed ? "Nice~~~" + (endTime - startTime) : "Fucking fucked!");
+
 
 	}
 }
