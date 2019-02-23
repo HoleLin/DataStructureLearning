@@ -278,7 +278,7 @@ class Sorts {
 	 *
 	 * @param arr   原数组
 	 * @param index index位置
-	 * @param size 堆的大小
+	 * @param size  堆的大小
 	 */
 	private static void heapify(int[] arr, int index, int size) {
 		// 左孩子的索引
@@ -346,12 +346,32 @@ class Sorts {
 	}
 
 	/**
-	 * 桶排序
+	 * 桶排序 -- 计数排序
 	 *
 	 * @param arr 待排数组
 	 */
 	static void bucketSort(int[] arr) {
-
+		if (arr == null || arr.length < 2) {
+			return;
+		}
+		int max = Integer.MIN_VALUE;
+		// 找出数组中最大值
+		for (int i = 0; i < arr.length; i++) {
+			max = Math.max(max, arr[i]);
+		}
+		// 定义一个辅助数组长度为max+1
+		int[] bucket = new int[max + 1];
+		// 统计arr数组中每个数出现的频率
+		for (int i = 0; i < arr.length; i++) {
+			bucket[arr[i]]++;
+		}
+		// 将桶中每个数从桶中倒出,根据每个数出现的频率
+		int i = 0;
+		for (int j = 0; j < bucket.length; j++) {
+			while (bucket[j]-- > 0) {
+				arr[i++] = j;
+			}
+		}
 	}
 
 	/**

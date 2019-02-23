@@ -12,13 +12,15 @@ public class TestConfig {
     /**
      * 测试次数
      */
-    public static final int testTime=500000;
+    public static final int TEST_TIME =500000;
+    public static final int TEST_SMALL_TIME =100;
     /**
      * 随机数组的最大长度
      */
-    public static final int maxSize=100;
+    public static final int MAX_SIZE =100;
+    public static final int SMALL_SIZE=200;
     /**
      * 随机数组中值最大数值
      */
-    public static final int maxValue=100;
+    public static final int MAX_VALUE =100;
 }

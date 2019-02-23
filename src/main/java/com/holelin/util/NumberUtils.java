@@ -90,7 +90,7 @@ public class NumberUtils {
      * @return 一个随机包含随机数值且长度随机的数组
      */
     public static int[] generateRandomArray(int maxSize, int maxValue) {
-        // 该处使用(maxSize + 1) * Math.random()是因为Math.random()方法取值范围是[0,1) 进行加1操作后 取值范围变为[0,1]
+        // 该处使用(MAX_SIZE + 1) * Math.random()是因为Math.random()方法取值范围是[0,1) 进行加1操作后 取值范围变为[0,1]
         int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
         for (int i = 0; i < arr.length; i++) {
             // 数组中的值采用一个随机数减去一个随机数，这样可以取到负值
@@ -98,5 +98,18 @@ public class NumberUtils {
         }
         return arr;
     }
-
+    /**
+     *
+     * @Description: 创建一个随机包含随机数值(不包含负数)且长度随机的数组
+     * @param maxSize 数组长度最大值
+     * @param maxValue 数组中数值的最大值
+     * @return 一个随机包含随机数值且长度随机的数组
+     */
+    public static int[] generateRandomArrayWithOutNegative (int maxSize, int maxValue) {
+        int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) ((maxValue + 1) * Math.random());
+        }
+        return arr;
+    }
 }

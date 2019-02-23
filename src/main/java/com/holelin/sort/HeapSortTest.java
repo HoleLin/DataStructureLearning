@@ -1,14 +1,17 @@
 package com.holelin.sort;
 
-import com.holelin.util.TestConfig;
 import com.holelin.util.NumberUtils;
+import com.holelin.util.TestConfig;
 
 /**
- * 冒泡排序测试类
- *
+ * ClassName: HeapSortTest
+ * 堆排序测试
  * @author HoleLin
+ * @version 1.0
+ * @date 2019/2/23
  */
-public class BubbleSortTest {
+
+public class HeapSortTest {
 	public static void main(String[] args) {
 		long startTime = System.nanoTime();
 		boolean succeed = true;
@@ -18,7 +21,7 @@ public class BubbleSortTest {
 			// 拷贝数组数组
 			int[] copyArr = NumberUtils.copyArray(arr);
 			// 进行排序
-            Sorts.bubbleSort(arr);
+			Sorts.heapSort(arr);
 			// 对数器
 			NumberUtils.comparator(copyArr);
 			// 验证两个经过排序后的数组是否完全一样
