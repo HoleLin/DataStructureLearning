@@ -1,6 +1,102 @@
 # DataStructureLearning
 数据结构学习代码笔记
 <details>
+<summary>目录结构</summary>
+<pre>
+└─java
+    └─com
+        └─holelin
+            ├─array
+            │      Array.java
+            │      ArrayTest.java
+            │
+            ├─bit
+            │      Bit.java
+            │
+            ├─heap
+            │      MaxHeap.java
+            │      MaxHeapTest.java
+            │
+            ├─linkedlist
+            │      LinkedList.java
+            │      LinkedListTest.java
+            │
+            ├─map
+            │      AVLMap.java
+            │      BSTMap.java
+            │      LinkedListMap.java
+            │      Map.java
+            │      MapTest.java
+            │
+            ├─queue
+            │      ArrayQueue.java
+            │      ArrayQueueTest.java
+            │      LinkedListQueue.java
+            │      LinkedListQueueTest.java
+            │      LoopQueue.java
+            │      LoopQueueTest.java
+            │      PriorityQueue.java
+            │      Queue.java
+            │      QueueEfficiencyTest.java
+            │
+            ├─set
+            │      AVLSet.java
+            │      BSTSet.java
+            │      LinkedListSet.java
+            │      Set.java
+            │      SetTest.java
+            │
+            ├─sort
+            │      BubbleSortTest.java
+            │      BucketSortTest.java
+            │      HeapSortTest.java
+            │      InsertionSortTest.java
+            │      MergeSortTest.java
+            │      QuickSortTest.java
+            │      SelectionSort.java
+            │      ShellSortTest.java
+            │      Sorts.java
+            │
+            ├─stack
+            │      ArrayStack.java
+            │      ArrayStackTest.java
+            │      LinkedListStack.java
+            │      LinkedListStackTest.java
+            │      Stack.java
+            │      StackEfficiencyTest.java
+            │
+            ├─tree
+            │      AVLTree.java
+            │      AVLTreeTest.java
+            │      BST.java
+            │      BSTTest.java
+            │      HashTable.java
+            │      Merger.java
+            │      RedBlackTree.java
+            │      RedBlackTreeTest.java
+            │      SegmentTree.java
+            │      SegmentTreeTest.java
+            │      Trie.java
+            │      TrieTest.java
+            │
+            ├─unionfind
+            │      QuickFind.java
+            │      QuickUnionByPathCompression.java
+            │      QuickUnionByPathCompression2.java
+            │      QuickUnionByRank.java
+            │      QuickUnionBySize.java
+            │      UnionFind.java
+            │      UnionFindTest.java
+            │
+            └─util
+                    FileOperation.java
+                    NumberUtils.java
+                    TestConfig.java
+
+</pre>
+</details>
+
+<details>
 <summary>📚日志</summary>
 
 2019年1月14日20:18:55 
