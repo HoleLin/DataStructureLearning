@@ -1,5 +1,7 @@
 # DataStructureLearning
 数据结构学习代码笔记
+<details>
+<summary>📚日志</summary>
 
 2019年1月14日20:18:55 
 * 完成冒泡排序  
@@ -89,8 +91,11 @@
 * 位运算
     * 待补充 使用位运算进行加减乘除
 * 添加希尔排序实现并测试
+</details>
+
+<details>
+<summary>📚待补充</summary>
 ----
-<h5>待补充<h5>
 
 1. 队列部分
     * 不浪费一个空间的循环队列
@@ -169,4 +174,5 @@
     * 再哈希法解决哈希冲突
     * Coalesced Hashing
 12. B类树
+</details>
 
