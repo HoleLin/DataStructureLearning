@@ -7,27 +7,6 @@
     └─com
         └─holelin
             ├─array
-            ├─bit
-            ├─heap
-            ├─linkedlist
-            ├─map
-            ├─queue
-            ├─set
-            ├─skiptable
-            ├─sort
-            ├─stack
-            ├─tree
-            ├─unionfind
-            └─util
-
-D:\Projects\GitHub\DataStructureLearning\src\main>Tree /f
-卷 Data 的文件夹 PATH 列表
-卷序列号为 92D8-D21C
-D:.
-└─java
-    └─com
-        └─holelin
-            ├─array
             │      Array.java
             │      ArrayTest.java
             │
