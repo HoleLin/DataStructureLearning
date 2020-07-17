@@ -1,8 +1,29 @@
 # DataStructureLearning
 数据结构学习代码笔记
 <details>
-<summary>目录结构</summary>
+<summary>📰目录结构</summary>
 <pre>
+└─java
+    └─com
+        └─holelin
+            ├─array
+            ├─bit
+            ├─heap
+            ├─linkedlist
+            ├─map
+            ├─queue
+            ├─set
+            ├─skiptable
+            ├─sort
+            ├─stack
+            ├─tree
+            ├─unionfind
+            └─util
+
+D:\Projects\GitHub\DataStructureLearning\src\main>Tree /f
+卷 Data 的文件夹 PATH 列表
+卷序列号为 92D8-D21C
+D:.
 └─java
     └─com
         └─holelin
@@ -45,6 +66,10 @@
             │      LinkedListSet.java
             │      Set.java
             │      SetTest.java
+            │
+            ├─skiptable
+            │      SkipList.java
+            │      SkipListOptimize.java
             │
             ├─sort
             │      BubbleSortTest.java
@@ -92,6 +117,7 @@
                     FileOperation.java
                     NumberUtils.java
                     TestConfig.java
+
 
 </pre>
 </details>
@@ -187,11 +213,14 @@
 * 位运算
     * 待补充 使用位运算进行加减乘除
 * 添加希尔排序实现并测试
+
+2020年7月17日14:59:44
+* 跳表的实现
+
 </details>
 
 <details>
 <summary>📚待补充</summary>
-----
 
 1. 队列部分
     * 不浪费一个空间的循环队列
