@@ -1,7 +1,5 @@
 package com.holelin.skiptable;
 
-import java.util.Arrays;
-
 /**
  * @Description: 极客时间<< 数据结构与算法之美>>
  * 跳表实现

@@ -1,7 +1,6 @@
 package com.holelin.bit;
 
 import com.holelin.array.Array;
-import com.sun.deploy.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;
