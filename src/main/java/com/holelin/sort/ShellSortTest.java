@@ -20,6 +20,7 @@ public class ShellSortTest {
             int[] copyArr = NumberUtils.copyArray(arr);
             // 进行排序
             Sorts.shellSort(arr);
+//            Sorts.shellSortFromAlgs4(arr);
             // 对数器
             NumberUtils.comparator(copyArr);
             // 验证两个经过排序后的数组是否完全一样

@@ -24,7 +24,7 @@ public class BucketSortTest {
 			// 拷贝数组数组
 			int[] copyArr = NumberUtils.copyArray(arr);
 			// 进行排序
-			Sorts.bucketSort(arr);
+            arr = Sorts.countiongSort(arr);
 
 			// 对数器
 			NumberUtils.comparator(copyArr);

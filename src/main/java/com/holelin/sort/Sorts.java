@@ -360,6 +360,30 @@ class Sorts {
     }
 
     /**
+     * 来自算法(第四版)希尔排序
+     *
+     * @param arr
+     */
+    static void shellSortFromAlgs4(int[] arr) {
+        int N = arr.length;
+        int h = 1;
+        while (h < N / 3) {
+            // 1,4,13,40,121,364
+            h = 3 * h + 1;
+        }
+        while (h >= 1) {
+            // 将数组变为h有序
+            for (int i = h; i < N; i++) {
+                for (int j = i; j >= h && arr[j] - arr[j - h] < 0; j -= h) {
+                    swap(arr, j, j - h);
+                }
+            }
+            h = h / 3;
+        }
+    }
+
+
+    /**
      * 桶排序 -- 计数排序
      *
      * @param arr 待排数组
@@ -390,20 +414,87 @@ class Sorts {
 
     /**
      * 基数排序
+     * 参考于 https://zq99299.github.io/dsalg-tutorial/dsalg-java-hsp/07/09.html#%E5%AE%8C%E6%95%B4%E5%AE%9E%E7%8E%B0
      *
      * @param arr 待排数组
      */
     static void radixSort(int[] arr) {
+        // 1. 得到数组中的最大值，并获取到该值的位数。用于循环几轮
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        // 得到位数
+        int maxLength = String.valueOf(max).length();
 
+        // 定义桶(0~9) 和 标识桶中元素个数
+        int[][] bucket = new int[10][arr.length];
+        int[] bucketCounts = new int[bucket.length];
+
+        // 总共需要进行 maxLength 轮
+        for (int k = 1, n = 1; k <= maxLength; k++, n *= 10) {
+            // 进行桶排序
+            for (int i = 0; i < arr.length; i++) {
+                // 获取该轮的桶索引：每一轮按 10 的倍数递增，获取到对应数位数
+                // 这里额外使用一个步长为 10 的变量 n 来得到每一次递增后的值
+                int bucketIndex = arr[i] / n % 10;
+                // 放入该桶中
+                bucket[bucketIndex][bucketCounts[bucketIndex]] = arr[i];
+                // 标识该桶元素多了一个
+                bucketCounts[bucketIndex]++;
+            }
+            // 将桶中元素获取出来，放到原数组中
+            int index = 0;
+            for (int i = 0; i < bucket.length; i++) {
+                if (bucketCounts[i] == 0) {
+                    // 该桶无有效元素，跳过不获取
+                    continue;
+                }
+                // 获取桶中有效的个数
+                for (int j = 0; j < bucketCounts[i]; j++) {
+                    arr[index++] = bucket[i][j];
+                }
+                // 取完后，重置该桶的元素个数为 0 ，下一次才不会错乱数据
+                bucketCounts[i] = 0;
+            }
+        }
     }
 
     /**
-     * 基数排序
-     *
+     * 计数排序
+     * 参考于 https://www.cnblogs.com/xiaochuan94/p/11198610.html
      * @param arr 待排数组
      */
-    static void countiongSort(int[] arr) {
-
+    static int[] countiongSort(int[] arr) {
+        // 找出数组A中的最大值、最小值
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (int num : arr) {
+            max = Math.max(max, num);
+            min = Math.min(min, num);
+        }
+        // 初始化计数数组count
+        // 长度为最大值减最小值加1
+        int[] count = new int[max - min + 1];
+        // 对计数数组各元素赋值
+        for (int num : arr) {
+            // A中的元素要减去最小值，再作为新索引
+            count[num - min]++;
+        }
+        // 计数数组变形，新元素的值是前面元素累加之和的值
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+        // 创建结果数组
+        int[] result = new int[arr.length];
+        // 遍历A中的元素，填充到结果数组中去
+        for (int i : arr) {
+            result[count[i - min] - 1] = i;
+            count[i - min]--;
+        }
+        return result;
     }
 
     /**
