@@ -134,6 +134,7 @@ class Sorts {
             swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
             //
             int[] p = partition(arr, l, r);
+            System.out.println(Arrays.toString(p));
             // 对左边区域进行快排
             quickSort(arr, l, p[0] - 1);
             // 对右边区域进行快排
@@ -153,16 +154,16 @@ class Sorts {
         int less = l - 1;
         // 记录大于区域的边界
         int more = r;
-        // L作为游标向有移动,当L>=more时说明不需要进行分区了
+        // l作为游标向右移动,当l>=more时说明不需要进行分区了
         while (l < more) {
             if (arr[l] < arr[r]) {
-                // 将最后一个数即arr[R]作为参照数
-                // 当arr[L]<arr[R],时说明arr[L]属于小于区域,将小于区域边界的下一个值arr[++less]的值与arr[L]的值进行交换,
-                // 并将小于区域向右移动一格(小于区域进行扩大),因为arr[R]已经进行了区域划分,所有游标也向右移动一格(L++).
+                // 将最后一个数即arr[r]作为参照数
+                // 当arr[l]<arr[r],时说明arr[l]属于小于区域,将小于区域边界的下一个值arr[++less]的值与arr[l]的值进行交换,
+                // 并将小于区域向右移动一格(小于区域进行扩大),因为arr[r]已经进行了区域划分,所有游标也向右移动一格(l++).
                 swap(arr, ++less, l++);
             } else if (arr[l] > arr[r]) {
-                // 当arr[L]>arr[R]时,说明arr[L]属于大于区域,将arr[-more]的值与arr[L]的值进行交换
-                // 并将大于区域向左移动一格(大于区域进行扩大),因为交换的arr[L]并没有进行区域划分,所有游标L不动,等待下次进行区域划分
+                // 当arr[l]>arr[r]时,说明arr[l]属于大于区域,将arr[--more]的值与arr[l]的值进行交换
+                // 并将大于区域向左移动一格(大于区域进行扩大),因为交换的arr[l]并没有进行区域划分,所以游标l不动,等待下次进行区域划分
                 swap(arr, --more, l);
             } else {
                 // 相等区域
@@ -525,7 +526,7 @@ class Sorts {
      * @param i   待交换的值
      * @param j   待交换的值
      */
-    private static void swap(int[] arr, int i, int j) {
+    public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
